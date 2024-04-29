@@ -1,6 +1,7 @@
 @extends('layouts.dashboard-layout')
 
 @section('content')
+<link href="{{asset('css/add-video.css')}}" rel="stylesheet">
 <body>
     <div class="wrapper">
         <aside id="sidebar" class="js-sidebar">
@@ -93,16 +94,34 @@
                 </div>
             </nav>
             <main class="content px-3 py-2">
-                <div class="container-fluid">
-                    <!-- Table Element -->
+            <div class="container-fluid">
                     <div class="card border-0">
                         <div class="card-header">
                             <h5 class="card-title">
                                 Add Video
-                            <h6><p class="text-muted">Please fill in all input on the forms.</p></h6>
+                                <h6><p class="text-muted">Please fill in all input on the forms.</p></h6>
                             </h5>
                         </div>
-                        <div class="card-body container-fluid">
+                        <div class="card-body container-fluid" id="video-card-body">
+                            <form id="add-video-form">
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="title" name="title" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Description</label>
+                                    <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="video" class="form-label">Video</label>
+                                    <input type="file" class="form-control" id="video" name="video" accept="video/*" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cover_photo" class="form-label">Cover Photo</label>
+                                    <input type="file" class="form-control" id="cover_photo" name="cover_photo" accept="image/*" required>
+                                </div>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </form>
                         </div>
                     </div>
                 </div>
